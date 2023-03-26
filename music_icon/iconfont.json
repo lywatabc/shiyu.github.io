@@ -1,0 +1,44 @@
+{
+  "id": "1165696",
+  "name": "iconfont",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "4023215",
+      "name": "灯泡",
+      "font_class": "iesp-lighting",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "4386296",
+      "name": "笔",
+      "font_class": "bi",
+      "unicode": "e7db",
+      "unicode_decimal": 59355
+    },
+    {
+      "icon_id": "5466561",
+      "name": "话题",
+      "font_class": "huati",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "16625614",
+      "name": "素材",
+      "font_class": "sucai",
+      "unicode": "e6ca",
+      "unicode_decimal": 59082
+    },
+    {
+      "icon_id": "6069902",
+      "name": "圆圈",
+      "font_class": "yuanquan",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    }
+  ]
+}

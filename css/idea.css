@@ -1,0 +1,130 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	list-style: none;
+	text-decoration: none;
+}
+
+#all1 {
+	width: 100%;
+	/* min-width: 1320px; */
+}
+
+/* 导航栏 */
+header {
+	width: 100%;
+	min-width: 1320px;
+	box-sizing: border-box;
+	/* border: #000000 solid 1px; */
+}
+
+nav {
+	width: 100%;
+	height: 50px;
+	background-color:white;
+	/* box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 4px; */
+}
+
+nav ul {
+	margin: 0 auto;
+}
+
+nav ul li {
+	width: 17%;
+	float: left;
+	color:#D0A9F5;
+	font-size: 15px;
+	margin-top: 13px;
+	font-weight: 700;
+	font-family: 微软雅黑;
+}
+
+nav ul li:nth-child(1) {
+	margin-left: 15%;
+}
+
+nav ul li:nth-child(3) {
+	font-size: 17px;
+}
+
+.img1 {
+	width: 100%;
+	height: 580px;
+	background: url(../images/点子.jpg) no-repeat 0 -260px;
+	overflow: hidden;
+	background-size: 100%;
+}
+
+.dz {
+	width: 100%;
+	height: 50px;
+	position: fixed;
+	_position: absolute;
+	height: 100px;
+	text-align: center;
+	margin-left: 0px;
+	margin-top: 13%;
+	z-index: 99;
+}
+
+.dz h3 {
+	overflow: hidden;
+	height: 40px;
+}
+
+.dz h3 span {
+	color: #FFF;
+	font-size: 45px;
+	line-height: 40px;
+	font-family: 宋体;
+	font-weight: 700;
+}
+
+#effect1 {
+	display: none;
+	font-size: 16px;
+	margin-top: 25px;
+	height: 40px;
+	position: relative;
+	font-family: 宋体;
+}
+
+#effect1 span {
+	color: #FFF;
+	overflow: hidden;
+	font-size: 25px;
+	line-height: 40px;
+}
+/* 底部 */
+footer{
+	width:100%;
+	height: 40px;
+	min-width: 1320px;
+	margin-top:-5px;
+	background-color: #2E2E2E;
+}
+.f1{
+	padding-top:10px;
+	text-align: center;
+}
+.f1 p{
+	color: white;
+	font-weight: 700;
+	font-family: 微软雅黑;
+}
+footer ul{
+	width: 100%;
+	height: 20px;
+	margin-top:-20px;
+}
+footer li{
+	width: 50%;
+	float: left;
+	color: white;
+	font-size: 14px;
+	text-align: center;
+}
+footer li a{
+	color: white;
+	margin-right: 10px;
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<title>文集</title>
+		<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/5.8.2/css/all.css">
+		<link rel="icon" href="images/shiyu.ico" type="image/x-icon">
+		<link rel="stylesheet" href="css/passage.css">
+		<script src="js/jquery.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#list li").mouseenter(function(){
+					var c = 0;
+					//获得当前对象移动到第几个li
+					c = $(this).index();
+					var left = c*250;
+					$(this).find('a').addClass('cur');
+					$(this).siblings('li').find('a').removeClass('cur');
+					//p标签定位实现红色线条
+					$(this).siblings('p').stop().animate({'left':left+'px'},300);
+					
+				});
+			})
+		</script>
+		<!-- 当鼠标移动到当前div，显示此处内容-->
+		<script type="text/javascript">
+		    window.onload=function(){
+		        var t=document.getElementById("list").getElementsByTagName("a");
+		        var c=document.getElementById("content").getElementsByTagName("div");
+		        for(var i=0;i<t.length;i++){
+		            t[i].id=i;
+		            t[i].onmouseover=function(){
+		                for(var k=0;k<c.length;k++){
+		                    t[k].className="";
+		                    c[k].style.display="none";
+		                }
+		                this.className="select";
+		                c[this.id].style.display="block";
+		            }
+		        }
+		
+		    }
+		</script>
+	</head>
+	<body>
+		<div id="all2">
+			<header>
+				<nav class="fixednav">
+					<ul>
+						<li><span>推荐</span></li>
+						<li><span>作者</span></li>
+						<li><span>SHIYU</span></li>
+						<li><span>诗词</span></li>
+						<li><span>文章</span></li>
+					</ul>
+				</nav>
+				<div class="all2-1">
+					<div class="up">
+						<p><span>"</span>生活方式像一个漫长的故事，或者像一座使人迷失的迷宫。任何一种负面的生活方式都有很多乱七八糟的细节，使它变得很有趣。人就在这种趣味中沉沦下去，从根本上忘记这种生活需要改变。<span>"</span></p>
+					</div>
+					<div class="down">
+						<div class="book">
+							<a href="https://haokan.baidu.com/v?vid=14153381028032960826&pd=bjh&fr=bjhauthor&type=video"><img src="images/bofang.png"></a>
+						</div>
+						<div  class="p1">
+							<p>《一只特立独行的猪》<span>——<a href="https://baike.baidu.com/item/%E7%8E%8B%E5%B0%8F%E6%B3%A2/6673?fr=aladdin">王小波</a></span></p>
+						</div>
+					</div>
+				</div>
+			</header>
+			<section>
+				<ul id="list">
+					<li><a>诗集</a></li>
+					<li><a>词集</a></li>
+					<li><a>文章</a></li>
+					<p></p>
+				</ul>	
+				<div class="content" id="content">
+					        <div class="sj">
+					        <ul>
+								<li><h4>夜雨寄北</h4><p>李商隐〔唐代〕</p><p>君问归期未有期，巴山夜雨涨秋池。</p><a href="https://song.gushiwen.cn/song/jiangweiwei/e46c43d13b97.mp3"><i class="fa fa-volume-down" aria-hidden="true"></i></a></li>
+					            <li><h4>闻王昌龄左迁龙标遥有此寄</h4><p>李白〔唐代〕</p><p>杨花落尽子规啼，闻道龙标过五溪。</p><a href="https://song.gushiwen.cn/song/jiangweiwei/62280919c9c5.mp3"><i class="fa fa-volume-down" aria-hidden="true"></i></a></li>
+					            <li><h4>题李凝幽居</h4><p>贾岛〔唐代〕</p><p>鸟宿池边树，僧敲月下门。</p><a href="https://song.gushiwen.cn/song/chenlang/bee5c2e9ddfe.mp3"><i class="fa fa-volume-down" aria-hidden="true"></i></a></li>
+					            <li><h4>长歌行</h4><p>汉乐府〔两汉〕</p><p>青青园中葵，朝露待日晞。</p><a href="https://song.gushiwen.cn/song/jiangweiwei/183d69f50755.mp3"><i class="fa fa-volume-down" aria-hidden="true"></i></a></li>
+					        </ul>
+					        </div>
+					    <div class="cj" style="display: none">
+					        <ul>
+					            <li><h4>水调歌头·明月几时有</h4><p>苏轼〔宋代〕</p><p>丙辰中秋，欢饮达旦，大醉，作此篇，兼怀子由。</p><a href="https://song.gushiwen.cn/song/jiangweiwei/632c5beb84eb.mp3"><i class="fa fa-volume-down" aria-hidden="true"></i></a></li>
+					            <li><h4>声声慢·寻寻觅觅</h4><p>李清照〔宋代〕</p><p>寻寻觅觅，冷冷清清，凄凄惨惨戚戚。</p><a href="https://song.gushiwen.cn/song/jiangweiwei/f82821b9d569.mp3"><i class="fa fa-volume-down" aria-hidden="true"></i></a></li>
+					            <li><h4>虞美人·春花秋月何时了</h4><p>李煜〔五代〕</p><p>春花秋月何时了？往事知多少。</p><a href="https://song.gushiwen.cn/song/jiangweiwei/3574610d74e0.mp3"><i class="fa fa-volume-down" aria-hidden="true"></i></a></li>
+					            <li><h4>长相思</h4><p>纳兰性德〔清代〕</p><p>山一程，水一程，身向榆关那畔行，夜深千帐灯。</p><a href="https://song.gushiwen.cn/song/jiangweiwei/0a4d69889c65.mp3"><i class="fa fa-volume-down" aria-hidden="true"></i></a></li>
+					        </ul>
+					        </div>
+					        <div class="wz" style="display: none">
+					            <ul>
+					                <li><h5>《荷塘月色》</h5><p>朱自清</p><p>这一片天地好像是我的;我也像超出了平常旳自己，到了另一世界里。我爱热闹，也爱冷静;爱群居，也爱独处。像今晚上，一个人在这苍茫旳月下，什么都可以想，什么都可以不想，便觉是个自由的人。</p></li>  
+					                <li><h5>《从百草园到三味书屋》</h5><p>鲁迅</p><p>不必说碧绿的菜畦，光滑的石井栏，高大的皂荚树，紫红的桑椹;也不必说鸣蝉在树叶里长吟，肥胖的黄蜂伏在菜花上，轻捷的叫天子(云雀)忽然从草间直窜向云霄里去了。</p></li>  
+					                <li><h5>《听听那冷雨》</h5><p>余光中</p><p>惊蛰一过，春寒加剧。先是料料峭峭，继而雨季开始，时而淋淋漓漓，时而淅淅沥沥，天潮潮地湿湿，即连在梦里，也似乎有把伞撑着。</p></li>  
+					                <li><h5>《流浪的二胡》</h5><p>陈荣利</p><p>二胡之于江南，恰如杏花春雨之于江南一般地诗意和绵长。虽然高山流水，我们只见过俞伯牙的那具焦尾琴;浔阳江边，我们也只闻见白居易的那把琵琶。</p></li>
+								</ul>
+					        </div>
+					</div>
+					</section>
+					<footer>
+						<div class="f1">
+							<p>SHIYU</p>
+						</div>
+						<ul>
+							<li>© 2020－2021 shiyu.com, all rights reserved lyw</li>
+							<li>
+								<a href="">联系我们</a>
+								<a href="">帮助中心</a>
+								<a href="">广告合作</a>
+								<a href="">法律声明</a>
+							</li>
+						</ul>
+					</footer>
+				</div>
+	</body>
+</html>

@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<title>诗与</title>
+		<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/5.8.2/css/all.css">
+		<link rel="stylesheet" type="text/css" href="./font_index/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="./font_icon/iconfont.css"/>
+		<link rel="icon" href="images/shiyu.ico" type="image/x-icon">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/footer.css">
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<style type="text/css">
+			*{padding:0; margin:0;list-style: none;}
+			a{text-decoration: none;}
+			body{ background:#fff; width:100%;position: absolute;}
+			 /* 下拉菜单部分 */
+			.all{
+				width:100%;
+				position:absolute;
+				box-sizing:border-box;
+				margin:0 auto;
+				min-width:1320px;
+				/* border:red solid 1px; */
+			}
+			.header{
+				width:100%;
+				height:20px;
+				background-color:#E3CEF6;
+				/* border:red solid 1px; */
+			}
+			.header p{
+				color:#FFFFFF;
+				font-size: 12px;
+				font-weight: 700;
+				cursor: pointer;
+			}
+			.header .p1{
+				float: left;
+				margin-left: 15%;
+			}
+			.header .p2{
+				float: right;
+				margin-right: 15%;
+			}
+			.p2 a{
+				color: #fff;
+			}
+			.header i{
+				margin-left: 6px;
+				color: #FFFFFF;
+			}
+			.nav1{
+				width:100%; 
+				display:none;
+			}
+			.list1{
+				opacity:0; 
+				transition:0.3s;
+			}
+			.list1.on{
+				opacity:1;
+			}
+			.list1:after{
+				display: block; 
+				content:""; 
+				clear:both;
+			}
+			.list1 dl{
+				font-size:14px;
+				font-weight:700;
+				box-sizing:border-box;
+				/* border:red solid 1px; */
+			}
+			.list1 dl:nth-child(1){
+				float: left;
+				margin-left:120px;
+			}
+			.list1 dl:nth-child(2){
+				float: right;
+			}
+			.list1 dt{
+				margin-top: 22px;
+			}
+			.list1 dd{
+				margin-bottom: 5px;
+				/* border:red solid 1px; */
+			}
+			.list1 a{
+				color:#555;
+				margin-left: 20px;
+				line-height:1.8em;
+				text-decoration: none;
+			}
+			.list1 .a1{
+				color: purple;
+				font-size: 18px;
+			}
+			.list1 img{
+				width: 20%;
+				float: left;
+			}
+			/* 导航栏部分 */
+			#fixednav {
+			    /* position: fixed; */
+			    left: 0px;
+			    width: 100%;
+			    z-index:999;
+			}
+			.header2{
+				width:100%;
+				height:60px;
+				position: absolute;
+				background-color: white;
+				border:#D3D3D3 solid 1px;
+			}
+			.header2 .l1{
+				width:100%;
+				margin-top:20px;
+			}
+			.header2 .l1 li{
+				float: left;
+				margin-left:80px;
+				font-weight: 600;
+				font-size: 15px;
+				font-family:幼圆;
+			}
+			.header2 .l1 li:hover{
+				cursor: pointer;
+			    color:black;
+			}
+			.header2 .l1 span{
+				margin-right: 5px;
+			    text-align:center;
+			}
+			.main a{
+				color:black;
+			}
+			.header2 p{
+				margin-top: -20px;
+				/* border:red solid 1px; */
+			}
+			.header2 p span{
+				margin-left: 80px;
+				font-size:45px;
+				font-weight: 1000;
+				font-family:"STKaiti";
+			}
+			.header2 .found{
+				width:20%;
+				margin-top:-40px;
+				float:right;
+				margin-right:5%;
+			}
+			.found ul{
+				color:black;
+				cursor: pointer;
+			}
+			.found ul li:nth-child(1){
+				float: left;
+				height: 40px;
+				font-size: 15px;
+				font-family: 幼圆;
+				font-weight: 700;
+				margin-right: 80px;
+			}
+			.found .on{
+				position: absolute;
+				margin-top:24px;
+				margin-left: -69.7%;
+				width: 1204px;
+				height: 100px;
+				text-decoration: none;
+				/* border:black solid 1px; */
+				display: none;
+			}
+			.found ul li:nth-child(1):hover .on{
+				display: block;
+				background-color: #FFFFFF;
+				box-shadow:rgba(0,0,0,0.2) 0px 0px 5px;
+			}
+			.found .icon{
+				width:15%;
+				margin:20px 0 0 95px;
+				height:60px;
+				float: left;
+			}
+			.found .icon p{
+				text-align: center;
+				margin-top:10px;			
+			}
+			.found .icon a{
+				color: black;
+				font-size: 15px;
+			}
+			.found .icon i{
+				color: gray;
+				margin-left:78px;
+				font-size:25px;
+			}
+			/* 轮播图 */
+			section{
+				width:89%;
+				height: 500px;
+				margin: 0 auto;
+				margin-top:83px;
+				/* border: #000000 solid 2px; */
+			}
+			#fk{
+						width: 100%;
+						height: 500px;
+						overflow:hidden;
+						position: relative;
+					}
+			#fk img{
+						width: 100%;
+						position: absolute;
+						top: 0px;
+						left: 0px;
+						display: none;
+					}
+			#fk ul{
+						position: absolute;
+						left: 548px;
+						bottom: 23px;
+					}
+			#fk ul li{
+						list-style: none;
+						width: 12px;
+						height: 12px;
+						background: black;
+						float: left;
+						margin-right: 8px;
+						border-radius: 50%;
+					}
+		</style>
+		<!-- 下拉菜单 -->
+		<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript">
+		$(function(){
+		    $(".p1").click(function (){
+		    $(this).toggleClass("on");
+		    $(".nav1").slideToggle();
+		    $(".list1").toggleClass("on");
+		});
+		})
+		</script>
+		<!-- 点击跳转 -->
+		<script type="text/javascript">
+			$(".poetry").click(function () {
+				$('html,body').animate({
+				scrollTop:$(".poetry1").offset().top},{duration:500,easing:'swing'});
+				return false;
+			}),
+			$(".read").click(function () {
+				$('html,body').animate({
+				scrollTop:$(".read1").offset().top},{duration:500,easing:'swing'});
+				return false;
+			}),
+			$(".history").click(function () {
+				$('html,body').animate({
+				scrollTop:$(".history1").offset().top},{duration:500,easing:'swing'});
+				return false;
+			}),
+			$(".cool").click(function () {
+				$('html,body').animate({
+				scrollTop:$(".cool1").offset().top},{duration:500,easing:'swing'});
+				return false;
+			})
+		</script>
+		<!-- 轮播图部分 -->
+		  </script>
+		  	<script type="text/javascript" src="jquery.js"></script>
+		  	<script type="text/javascript">
+		       $(function(){
+		          // 定时器自动轮播
+		          // 全局变量c
+		          var c=0;
+		          setInterval(function(){
+		          	c++;
+		          	c=(c==4)?0:c;
+		            $('#fk ul li').eq(c).css({'background':'#A10000'}).siblings('li').css({'background':'black'});
+		            $("#fk img").eq(c).fadeIn(1000).siblings('img').fadeOut(1000);
+		          },2000);
+		       })
+		  	</script>
+			<!-- 主要内容 -->
+			<script type="text/javascript">
+			    window.onload=function(){
+			    var f=document.getElementById("main_1");
+			    var a=f.getElementsByTagName("article");
+			    var b=f.getElementsByTagName("p");
+			    var c=f.getElementsByClassName("more");
+			    for(var i=0;i<a.length;i++){
+			        a[i].id=i;
+			        a[i].onmouseover=function(){
+			            b[this.id].style.display="none";
+			            c[this.id].style.display="block";
+			        }
+			        a[i].onmouseout=function(){
+			            b[this.id].style.display="block";
+			            c[this.id].style.display="none";
+			        }
+			    }
+			}
+			</script>
+			<!-- 排行榜部分 -->
+		<script type="text/javascript">
+		$(function(){
+		    var olis=document.getElementById("book-list").getElementsByTagName("li");
+		    var odls=document.getElementById("book-list").getElementsByTagName("dl");
+		    for(var j=0;j<olis.length;j++){
+		        olis[j].id=j;
+		        olis[j].onmouseover=function(){
+		            odls[this.id].style.display="block";
+		        }
+		        olis[j].onmouseout=function(){
+		            odls[this.id].style.display="none";
+		        }
+		    }
+		})
+		</script>
+		<!-- 返回顶部 -->
+		<script src="js/jquery-3.0.0.min.js"></script>
+		<script>
+		    // 当网页向下滑动600px 出现"返回顶部" 按钮
+		    window.onscroll = function() {scrollFunction();};
+		    function scrollFunction() {console.log(121);
+		        if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+		            document.getElementById("myBtn").style.display = "block";
+		        } else {
+		            document.getElementById("myBtn").style.display = "none";
+		        }
+		    }
+		    $(function(){
+		        $("#myBtn").click(function(){
+		            var timer=setInterval(function(){
+		                $(window).scrollTop($(window).scrollTop()-100);
+		                if($(window).scrollTop()==0){
+		                    clearInterval(timer);
+		                }
+		            },50)
+		        })
+		    })
+		</script>
+	</head>
+	<body>
+		<div class="all">
+			<!-- 下拉菜单部分 -->
+			<div class="header">
+				<p class="p1">诗 与<i class="android iconfont icon-gushix"></i></p>
+				<p class="p2"><a href="登录/page_1.html">登 录<i class="android iconfont icon-yonghu"></i></a></p>
+			</div>
+			<div class="nav1">
+			<div class="list1">
+				 <dl>
+					<img src="images/海豚小女孩.png" >
+				    <dt><a href="#" class="a1">概念</a></dt>
+				    <dd><a href="#">慢下脚步，体验诗与远方</a></dd>
+				</dl>
+				<dl>
+					<img src="images/地球小女孩.png" >
+				    <dt><a href="#" class="a1">文化</a></dt>
+				    <dd><a href="#">静心阅读，享受诗词之美</a></dd>                
+				</dl>
+			</div>
+			</div>
+			<!-- 导航栏部分 -->
+			<div class="header2" id="fixednav">
+				<div class="l1" id="l1">
+					<ul>
+					    <li class="main">
+					        <span><i class="android iconfont icon-shici"></i></span><a href="#poetry" class="poetry">诗词</a>
+					    </li>
+					    <li class="main">
+					        <span><i class="android iconfont icon-yuedu"></i></span><a href="#read" class="read">阅读</a>
+					    </li>
+					    <li class="main">
+					        <span><i class="android iconfont icon-lishi"></i></span><a href="#history" class="history">历史</a>
+					    </li>
+					    <li class="main">
+					        <span><i class="android iconfont icon-zhishidian"></i></span><a href="#cool" class="cool">冷知识</a>
+					    </li>
+					</ul>
+				</div>
+				<p><span>SHIYU</span></p>
+				<div class="found">
+					<ul>
+						<li>
+							发现
+							<div class="on">
+								<div class="icon"><i class="android iconfont icon-idea"></i><p><a href="idea.html">点子</a></p></div>
+								<div class="icon"><i class="android iconfont icon-wenji"></i><p><a href="passage.html">文集</a></p></div>
+								<div class="icon"><i class="android iconfont icon-hudong"></i><p><a href="interaction.html">互动</a></p></div>
+								<div class="icon"><i class="android iconfont icon-yinyue"></i><p><a href="music.html">音乐</a></p></div>
+							</div>
+						</li>
+						<li><i class="android iconfont icon-sousuo-copy"></i></li>
+					</ul>
+				</div>
+			</div>
+			<!-- 轮播图 -->
+			<section>
+				<div id="fk">
+					<img src="images/l1.jpg" style="display: block;" />
+					<img src="images/l2.jpg" />
+					<img src="images/l3.jpg" />
+					<img src="images/l4.jpg" />
+					<ul>
+						<li style="background: #A10000;"></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+			</section>
+			<!-- 主要内容 -->
+			<main>
+				<div class="top1">
+					<p><a name="poetry" class="poetry1">每日好诗</a></p>
+					<p><a href="">查看更多 >></a></p>
+				</div>
+				<div class="main_1" id="main_1">
+					<article class="a2">
+					<div class="img1"><img src="images/m1.jpg" alt=""/></div>
+					<p>知否，知否？应是绿肥红瘦。</br></br></br><span>李清照</span>如梦令·昨夜雨疏风骤</p>
+					<div class="more">
+					    <div class="more1">❤找相似</div>
+					    <div class="more2">发现更多的宝藏诗文 ></div>
+					</div>
+					</article>
+					<article class="a2">
+					    <div class="img1"><img src="images/m2.png" alt=""/></div>
+					    <p>生态兴则文明兴，生态衰则文明衰。</br></br></br><span>寄情山水</span>建设生态文明</p>
+					    <div class="more">
+					        <div class="more1">❤找相似</div>
+					        <div class="more2">发现更多的宝藏诗文 ></div>
+					    </div>
+					</article>
+					<article class="a2">
+					    <div class="img1"><img src="images/m3.jpg" alt=""/></div>
+					    <p>满地霜华浓似雪。人语西风，瘦马嘶残月。</br></br><span>王国维</span>蝶恋花·满地霜华浓似雪</p>
+					    <div class="more">
+					        <div class="more1">❤找相似</div>
+					        <div class="more2">发现更多的宝藏诗文 ></div>
+					    </div>
+					</article>
+					<article class="a2">
+					    <div class="img1"><img src="images/m4.jpg" alt=""/></div>
+					    <p>力拔山兮气盖世。时不利兮骓不逝。</br></br></br><span>项羽</span>垓下歌</p>
+					    <div class="more">
+					        <div class="more1">❤找相似</div>
+					        <div class="more2">发现更多的宝藏诗文 ></div>
+					    </div>
+					</article>
+					<article class="a2">
+					<div class="img1"><img src="images/m5.jpg" alt=""/></div>
+					<p>秋风清，秋月明，落叶聚还散，寒鸦栖复惊。</br></br><span>李白</span>三五七言 / 秋风词</p>
+					<div class="more">
+					    <div class="more1">❤找相似</div>
+					    <div class="more2">发现更多的宝藏诗文 ></div>
+					</div>
+					</article>
+					<article class="a2">
+					    <div class="img1"><img src="images/m6.jpg" alt=""/></div>
+					    <p>小山重叠金明灭，鬓云欲度香腮雪。</br></br></br><span>温庭筠</span>菩萨蛮 · 小山重叠金明灭</p>
+					    <div class="more">
+					        <div class="more1">❤找相似</div>
+					        <div class="more2">发现更多的宝藏诗文 ></div>
+					    </div>
+					</article>
+					<article class="a2">
+					    <div class="img1"><img src="images/m7.jpg" alt=""/></div>
+					    <p>桃之夭夭，灼灼其华。</br></br></br><span>佚名</span>桃夭</p>
+					    <div class="more">
+					        <div class="more1">❤找相似</div>
+					        <div class="more2">发现更多的宝藏诗文 ></div>
+					    </div>
+					</article>
+					<article class="a2">
+					    <div class="img1"><img src="images/m8.jpg" alt=""/></div>
+					    <p>月上柳梢头，人约黄昏后。</br></br></br><span>欧阳修</span>生查子 · 元夕</p>
+					    <div class="more">
+					        <div class="more1">❤找相似</div>
+					        <div class="more2">发现更多的宝藏诗文 ></div>
+					    </div>
+					</article>
+					<div class="foot1">
+						<p>查看更多</p>
+					</div>
+				</div>
+				<div class="top2">
+					<p>清醒是一种细小而有耐心的英雄主义</p>
+					<p>——伊恩·麦克尤恩</p>
+				</div>
+				<div class="top3">
+					<p><a name="read" href="read1">书籍推荐</a></p>
+					<p><a href="">查看更多 >></a></p>
+					<div class="top3-1">
+						<img src="images/book1.jpg" >
+						<ul>
+							<li><p>狮子之家的点心日</p></li>
+							<li><p>[日] 小川糸 / 湖南文艺出版社 / 2021-4-9</p></li>
+							<li><p>33岁的海野雫罹患重疾，住进了狮子之家疗养院。每一个住在这里的人都可以提出自己人生最后时刻想吃的点心，只有雫迟迟没有做出选择……</p></li>
+						</ul>
+					</div>
+					<div class="top3-2">
+						<img src="images/book2.jpg" >
+						<ul>
+							<li><p>做一个清醒的现代人</p></li>
+							<li><p>刘擎 / 湖南文艺出版社 / 2021-4-21</p></li>
+							<li><p>在“纵横交错”的文化背景下，刘擎教授通过发人深省的文字启发我们以理性化的方式来探索世界和自己，思考“人应当信奉什么”“应当怎样生活”“如何理解和应对困境”等诸多......</p></li>
+						</ul>
+					</div>
+					<div class="top3-3">
+						<img src="images/book3.jpg" >
+						<ul>
+							<li><p>十九日谈</p></li>
+							<li><p>杨无锐 著 / 刘鑫 绘 / 天津人民出版社丨蚂蚁书架 / 2021-4-1</p></li>
+							<li><p>两千多年前，一众匿名诗人写下十九首五言诗，萧统编入《文选》，是为《古诗十九首》。后人赞它“天衣无缝，一字千金”。而今，讲诗人杨无锐涉世而来，重访古典，却发现我们只不过重复着《古诗十九首》里同样的心事……</p></li>
+						</ul>
+					</div>
+					<div class="top3-4">
+						<img src="images/book4.jpg" >
+						<ul>
+							<li><p>夏日踟躇</p></li>
+							<li><p>李渝 / 后浪丨九州出版社 / 2021-3</p></li>
+							<li><p>十三则短篇，底色为苦难，浮现的却是河与黄昏。李渝笔下的暮色降落，是骚动将至的预告；江水流转，是历史与记忆的即将重现。</p></li>
+						</ul>
+					</div>
+					<div class="top3-5">
+						<img src="images/book5.jpg" >
+						<ul>
+							<li><p>偏见</p></li>
+							<li><p>【美】珍妮弗·埃伯哈特 / 北京联合出版社 / 2021-4-15</p></li>
+							<li><p>人类的大脑为节省认知资源产生的功能却会让我们落入隐性偏见的陷阱。隐性偏见会塑造我们每天的所见、所闻、所感、所记，甚至影响我们的日常行为。</p></li>
+						</ul>
+					</div>
+					<div class="book-right">
+						<p>推荐榜</p>
+						    <ul id="book-list">
+						        <li>
+						            <span>1</span><a href="">云胡不喜<h5>言情</h5></a>
+						            <dl>
+						                <dd>尼卡</dd>
+						                <dd>言情 | 现代言情</dd>
+						                <dd>23412推荐票</dd>
+										<dd><img src="https://img9.doubanio.com/view/ark_column_cover/retina/public/59286806.jpg?v=1618229609"></dd>
+									</dl>
+						        </li>
+						        <li>
+						            <span>2</span><a href="">月亮的光是借来的<h5>女性</h5></a>
+						            <dl>
+										<dd>黄墨奇</dd>
+						                <dd>女性 | 职业女性</dd>
+						                <dd>20536推荐票</dd>
+										<dd><img src="https://img9.doubanio.com/view/ark_column_cover/retina/public/59253746.jpg?v=1618328706"></dd>
+						            </dl>
+						        </li>
+						        <li>
+						           <span>3</span><a href="">二环老破小<h5>文艺</h5></a>
+						           <dl>
+						               <dd>由野</dd>
+						               <dd>文艺 | 青春成长</dd>
+						               <dd>17358推荐票</dd>
+									   <dd><img src="https://img3.doubanio.com/view/ark_column_cover/retina/public/36187900.jpg?v=1615170222"></dd>
+						           </dl> 
+						        </li>
+						        <li>
+						            <span>4</span><a href="">木叶青玄<h5>历史</h5></a>
+						            <dl>
+						                <dd>破小慢</dd>
+						                <dd>历史 | 架空历史</dd>
+						                <dd>12557推荐票</dd>
+										<dd><img src="https://img2.doubanio.com/view/ark_column_cover/retina/public/52535023.jpg?v=1616984534"></dd>
+						            </dl>
+						        </li>
+								<li>
+								    <span>5</span><a href="">心有灵犀的你<h5>言情</h5></a>
+								    <dl>
+								        <dd>六戍</dd>
+								        <dd>言情 | 现代言情</dd>
+								        <dd>10731推荐票</dd>
+										<dd><img src="https://img9.doubanio.com/view/ark_column_cover/retina/public/36098006.jpg?v=1615733956"></dd>
+								    </dl>
+								</li>
+								<li>
+								    <span>6</span><a href="">虞美人不开的夏天<h5>悬疑</h5></a>
+								    <dl>
+								        <dd>鹿迢迢</dd>
+								        <dd>悬疑 | 复仇计划</dd>
+								        <dd>9364推荐票</dd>
+										<dd><img src="https://img1.doubanio.com/view/ark_column_cover/retina/public/36164218.jpg?v=1615084260"></dd>
+								    </dl>
+								</li>
+								<li>
+								    <span>7</span><a href="">象形<h5>幻想</h5></a>
+								    <dl>
+								        <dd>宏渊</dd>
+								        <dd>幻想 | 脑洞故事</dd>
+								        <dd>7930推荐票</dd>
+										<dd><img src="https://img2.doubanio.com/view/ark_column_cover/retina/public/59082613.jpg?v=1617410863"></dd>
+								    </dl>
+								</li>
+								<li>
+								    <span>8</span><a href="">盛夏海棠次第开<h5>女性</h5></a>
+								    <dl>
+								        <dd>傅归竺</dd>
+								        <dd>女性 | 职业女性</dd>
+								        <dd>7231推荐票</dd>
+										<dd><img src="https://img9.doubanio.com/view/ark_column_cover/retina/public/36467565.jpg?v=1617629513"></dd>
+								    </dl>
+								</li>
+								<li>
+								    <span>9</span><a href="">阴雷<h5>悬疑</h5></a>
+								    <dl>
+								        <dd>李大发</dd>
+								        <dd>悬疑 | 罪案故事</dd>
+								        <dd>6437推荐票</dd>
+										<dd><img src="https://img1.doubanio.com/view/ark_column_cover/retina/public/36404037.jpg?v=1614922702"></dd>
+								    </dl>
+								</li>
+								<li>
+								    <span>10</span><a href="">西风醉<h5>言情</h5></a>
+								    <dl>
+								        <dd>十三弦声</dd>
+								        <dd>言情 | 古代言情</dd>
+								        <dd>5961推荐票</dd>
+										<dd><img src="https://img1.doubanio.com/view/ark_column_cover/retina/public/35415297.jpg?v=1603678606"></dd>
+								    </dl>
+								</li>
+								<li>
+								    <span>11</span><a href="">双奇缘<h5>幻想</h5></a>
+								    <dl>
+								        <dd>车窗外</dd>
+								        <dd>幻想 | 脑洞故事</dd>
+								        <dd>4782推荐票</dd>
+										<dd><img src="https://img1.doubanio.com/view/ark_column_cover/retina/public/43973617.jpg?v=1616651156"></dd>
+								    </dl>
+								</li>
+								<li>
+								    <span>12</span><a href="">鱼和熊掌<h5>女性</h5></a>
+								    <dl>
+								        <dd>江桨桨</dd>
+								        <dd>女性 | 喜剧</dd>
+								        <dd>3612推荐票</dd>
+										<dd><img src="https://img9.doubanio.com/view/ark_column_cover/retina/public/36350075.jpg?v=1618292747"></dd>
+								    </dl>
+								</li>
+								<li>
+								    <span>13</span><a href="">许栩如生<h5>言情</h5></a>
+								    <dl>
+								        <dd>阿霰</dd>
+								        <dd>言情 | 校园青春</dd>
+								        <dd>2490推荐票</dd>
+										<dd><img src="https://img9.doubanio.com/view/ark_column_cover/retina/public/59322466.jpg?v=1618300650"></dd>
+								    </dl>
+								</li>
+								<li>
+								    <span>14</span><a href="">命局<h5>悬疑</h5></a>
+								    <dl>
+								        <dd>山并</dd>
+								        <dd>悬疑 | 奇遇怪谈</dd>
+								        <dd>1787推荐票</dd>
+										<dd><img src="https://img9.doubanio.com/view/ark_column_cover/retina/public/42758934.jpg?v=1616578951"></dd>
+								    </dl>
+								</li>
+								<li>
+								    <span>15</span><a href="">主母的世界<h5>科幻</h5></a>
+								    <dl>
+								        <dd>南城雾雨</dd>
+								        <dd>科幻 | 虚拟现实</dd>
+								        <dd>1369推荐票</dd>
+										<dd><img src="https://img9.doubanio.com/view/ark_column_cover/retina/public/45663856.jpg?v=1616938284"></dd>
+								    </dl>
+								</li>
+						    </ul>
+					</div>
+				</div>
+				<div class="top4">
+					<h4>故宫池馆更楼台，约风月、今宵何处。</h4>
+					<h5>——张先《山亭宴慢/山亭宴》</h5>
+					<div class="gg"><img src="images/故宫.jpg" alt=""></div>
+				</div>
+				<div class="top5">
+					<p><a name="history" href="history1">古往今来</a></p>
+					<p><a href="">查看更多 >></a></p>
+					<div class="top5-1">
+						<a href="https://link.zhihu.com/?target=https%3A//www.bilibili.com/bangumi/media/md503917/%3Ffrom%3Dsearch%26seid%3D3671928652738667112"><img src="images/bofang.png"></a>
+					</div>
+					<ul class="v1">
+						<li>文化 | 历史</li>
+						<li>敦煌</li>
+						<li>纪录了敦煌地区 1600 年波澜壮阔的历史进程和散落其中的故事</li>
+					</ul>
+					<div class="top5-2">
+						<a href="https://link.zhihu.com/?target=https%3A//www.bilibili.com/bangumi/media/md8542548/%3Ffrom%3Dsearch%26seid%3D8260611920557783254"><img src="images/bofang.png" alt=""></a>
+					</div>
+					<ul class="v2">
+						<li>文化 | 历史</li>
+						<li>大明宫</li>
+						<li>讲述了大唐帝国的权力中枢——大明宫，从建造、辉煌到毁灭的全过程</li>
+					</ul>
+					<div class="top5-3">
+						<table cellspacing="15">
+							<tr>
+							  <td class="t1"><a href="http://mediaplay.kksmg.com/2021/03/06/h264_450k_mp4_17e933e9cdfcd44e71797d86ec63858d_ncm.mp4"><img src="images/bofang.png" alt=""></a></td>
+							</tr>
+							<tr>
+							  <td class="t2"><a href="https://haokan.baidu.com/v?vid=5592158470063506940&pd=bjh&fr=bjhauthor&type=video"><img src="images/bofang.png" alt=""></a></td>
+							</tr>
+							<tr>
+							  <td class="t3"><a href="https://haokan.baidu.com/v?vid=5105521103342780750&pd=bjh&fr=bjhauthor&type=video"><img src="images/bofang.png" alt=""></a></td>
+							</tr>
+						</table>
+						<table cellspacing="10">
+							<tr>
+								<td>《历史·山水·渔樵》：江渚之上，惯看秋月春风</td>
+							</tr>
+							<tr>
+								<td>盘庚迁殷 ：盘庚继位后，迁都于殷（今河南安阳）</td>
+							</tr>
+							<tr>
+								<td>《南京！南京》：残忍的杀戮磨灭不了民族的尊严！</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<div class="top6">
+					<p>你知道元宵节是怎么来的吗？</p>
+				</div>
+				<div class="top7">
+					<p><a name="cool" href="cool1">你知道么</a></p>
+					<p><a href="">查看更多 >></a></p>
+					<div class="top7-1">
+						<div class="top7-2">
+							<div class="xn">
+								<img src="images/xn.jpg" alt="">
+							</div>
+							<ul>
+								<li><a href=""><h5>小年吃什么？</h5></a></li>
+								<li><h6>小年和灶王爷有什么关系？</h6></li>
+								<li><h6>小年到底是腊月二十三还是腊月二十四呢?</h6></li>
+							</ul>
+						</div>
+						<div class="top7-3">
+							<div class="xn">
+								<img src="images/tw.jpg" alt="">
+							</div>
+							<ul>
+								<li><a href=""><h5>古人是怎么调味的？</h5></a></li>
+								<li><h6>味道是怎么形成的？</h6></li>
+								<li><h6>我们用的调味料是怎么发展来的？</h6></li>
+							</ul>
+						</div>
+						<div class="top7-4">
+							<div class="xn">
+								<img src="images/tc.jpg" alt="">
+							</div>
+							<ul>
+								<li><a href=""><h5>唐朝什么职业最高危？</h5></a></li>
+								<li><h6>诗人为什么这么倒霉？</h6></li>
+								<li><h6>唐朝诗人的晚年都是怎样的？</h6></li>
+							</ul>
+						</div>
+						<div class="top7-5">
+							<div class="xn">
+								<img src="images/xy.png" alt="">
+							</div>
+							<ul>
+								<li><a href=""><h5>襄阳为何是南宋的命脉？</h5></a></li>
+								<li><h6>是谁一直在坚守襄阳？</h6></li>
+								<li><h6>襄阳是怎么被攻破的？</h6></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</main>
+		<footer>
+			<div class="f1">
+				<p>SHIYU</p>
+			</div>
+			<ul>
+				<li>© 2020－2021 shiyu.com, all rights reserved lyw</li>
+				<li>
+					<a href="">联系我们</a>
+					<a href="">帮助中心</a>
+					<a href="">广告合作</a>
+					<a href="">法律声明</a>
+				</li>
+			</ul>
+			<button id="myBtn" title="回顶部"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+		</footer>
+		</div>
+	</body>
+</html>

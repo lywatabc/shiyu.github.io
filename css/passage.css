@@ -1,0 +1,299 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	list-style: none;
+	text-decoration: none;
+}
+
+#all2 {
+	width: 100%;
+	min-width: 1320px;
+}
+
+/* 导航栏 */
+header {
+	width: 100%;
+	box-sizing: border-box;
+	/* border: #000000 solid 1px; */
+}
+
+nav {
+	width: 100%;
+	height: 50px;
+	background-color:#E3CEF6;
+}
+.fixednav {
+	position: fixed;
+	top:0px;
+	left: 0px;
+	width: 100%;
+	z-index: 999;
+}
+nav ul {
+	margin: 0 auto;
+}
+
+nav ul li {
+	width: 17%;
+	float: left;
+	color: white;
+	font-size: 15px;
+	margin-top: 13px;
+	font-weight: 700;
+}
+
+nav ul li:nth-child(1) {
+	margin-left: 15%;
+}
+
+nav ul li:nth-child(3) {
+	font-size: 17px;
+}
+
+/* 书摘部分 */
+.all2-1 {
+	width: 70%;
+	height: 180px;
+	margin: 0 auto;
+	margin-top:100px;
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 5px;
+}
+
+.all2-1 .up {
+	width: 90%;
+	margin: 0 auto;
+	line-height: 30px;
+	padding-top: 10px;
+}
+
+.all2-1 .up p {
+	color: #848484;
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.all2-1 .up span {
+	color: #E6E6E6;
+	font-size: 40px;
+}
+
+.all2-1 .down {
+	width: 100%;
+	height: 70px;
+	margin-top: 20px;
+	background-color: #FAFAFA;
+}
+
+.all2-1 .down .book {
+	width: 70px;
+	height: 70px;
+	margin-left: 50px;
+	background-image: url(../images/书.jpg);
+	background-size: cover;
+	-webkit-filter: brightness(110%);
+	border: #000000 solid 1px;
+}
+
+.all2-1 .down .book img {
+	width: 40%;
+	margin-top: 22px;
+	margin-left: 30%;
+}
+
+.all2-1 .down .p1 {
+	width: 70%;
+	height: 20px;
+	float: left;
+	margin-left: 150px;
+	margin-top: -45px;
+	/* border: #000000 solid 1px; */
+}
+
+.all2-1 .down .p1 p {
+	font-size: 18px;
+	font-weight: 700;
+	font-family: 宋体;
+	color: #585858;
+}
+
+.all2-1 .down .p1 span {
+	float: right;
+}
+
+.all2-1 .down .p1 a {
+	color: #585858;
+}
+
+/* 诗词文集部分 */
+section {
+	width: 70%;
+	height: 500px;
+	margin: 0 auto;
+	margin-top: 80px;
+}
+
+section #list {
+	width: 80%;
+	height: 30px;
+	margin: 0 auto;
+	margin-top: 20px;
+	position: relative;
+	border-bottom: 2px solid #ccc;
+}
+
+section #list li {
+	width: 33%;
+	list-style: none;
+	float: left;
+	/* border: 1px solid #D358F7; */
+}
+
+section #list li a {
+	display: block;
+	width: 136px;
+	height: 30px;
+	line-height: 30px;
+	/* text-align: center; */
+	color: black;
+	font-size: 25px;
+	text-decoration: none;
+}
+
+section #list li a.cur {
+	cursor: pointer;
+	color: #D358F7;
+}
+
+section #list p {
+	position: absolute;
+	width: 50px;
+	/* margin-left:100px; */
+	margin-top: 30px;
+	border: 1px solid #D358F7;
+}
+
+#content {
+	width: 100%;
+	margin-top: 10px;
+}
+
+#content li {
+	width: 100%;
+	height: 150px;
+	margin-top: 30px;
+	background-color: #FAFAFA;
+	/* border-bottom:#ccc solid 1px; */
+}
+
+#content .sj {
+	width: 80%;
+	margin: 0 auto;
+}
+
+#content .cj {
+	width: 80%;
+	margin: 0 auto;
+}
+
+#content .wz {
+	width: 80%;
+	margin: 0 auto;
+}
+
+#content h4 {
+	color: #585858;
+	padding-top: 30px;
+	margin-bottom: 10px;
+	text-align: center;
+	font-weight: 700;
+	font-family: 宋体;
+}
+
+#content p {
+	color: #585858;
+	font-size: 15px;
+	text-align: center;
+	font-weight: 700;
+	line-height: 30px;
+}
+
+#content p:nth-child(2) {
+	color: #BE81F7;
+	font-size: 12px;
+	font-weight: 700;
+}
+
+#content .sj i {
+	color: #000000;
+	font-size: 15px;
+	float: right;
+	margin-top: -22px;
+	margin-right: 215px;
+}
+
+#content .cj i {
+	color: #000000;
+	font-size: 15px;
+	float: right;
+	margin-top: -22px;
+	margin-right: 190px;
+}
+
+#content .wz h5 {
+	color: #585858;
+	padding-top: 20px;
+	font-size: 14px;
+	margin-bottom: 10px;
+	text-align: center;
+	font-weight: 700;
+	font-family: 宋体;
+}
+
+#content .wz p {
+	width: 80%;
+	margin: 0 auto;
+	color: #585858;
+	font-size: 12px;
+	text-align: center;
+	font-weight: 700;
+	line-height: 30px;
+}
+
+#content .wz p:nth-child(2) {
+	color: #BE81F7;
+	font-size: 12px;
+	font-weight: 700;
+}
+
+/* 底部 */
+footer{
+	width:100%;
+	height: 40px;
+	margin-top:300px;
+	min-width: 1320px;
+	background-color: #2E2E2E;
+}
+.f1{
+	padding-top:10px;
+	text-align: center;
+}
+.f1 p{
+	color: white;
+	font-weight: 700;
+}
+footer ul{
+	width: 100%;
+	height: 20px;
+	margin-top:-20px;
+}
+footer li{
+	width: 50%;
+	float: left;
+	color: white;
+	font-size: 14px;
+	text-align: center;
+}
+footer li a{
+	color: white;
+	margin-right: 10px;
+}
